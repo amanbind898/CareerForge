@@ -183,7 +183,7 @@ export default function GitHubReadme() {
             <div className="text-gray-500 dark:text-gray-400">
               # Your Generated README will appear here...
               <br /><br />
-              Fill out the form above and click "Generate README" to see your custom README file.
+              Fill out the form above and click {"Generate README"} to see your custom README file.
             </div>
           </div>
         </div>
