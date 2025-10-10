@@ -81,7 +81,7 @@ CareerForge/
 
 ## 🤝 Contributing
 
-We love contributions! CareerForge is participating in **Hacktoberfest 2024** 🎃
+We love contributions! CareerForge is participating in **Hacktoberfest 2025** 🎃
 
 ### How to Contribute
 
