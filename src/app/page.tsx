@@ -13,7 +13,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               AI-powered tools to help you create professional resumes, optimize your LinkedIn profile, 
-              and generate compelling GitHub READMEs that showcase your skills and experience.
+              and generate compelling GitHub profile READMEs that showcase your skills and experience.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -114,7 +114,7 @@ export default function Home() {
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">5,000+</dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300">GitHub READMEs Created</dt>
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300">GitHub Profile READMEs Created</dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">15,000+</dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/5 p-8">

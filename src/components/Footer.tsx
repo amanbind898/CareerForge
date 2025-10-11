@@ -13,7 +13,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
-              Build. Polish. Launch your career with AI-powered tools for resumes, LinkedIn profiles, and GitHub READMEs.
+              Build. Polish. Launch your career with AI-powered tools for resumes, LinkedIn profiles, and GitHub profile READMEs.
             </p>
             <div className="flex space-x-4">
               <Link
@@ -56,7 +56,7 @@ export default function Footer() {
                   href="/github-readme"
                   className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
-                  GitHub README
+                  GitHub Profile README
                 </Link>
               </li>
             </ul>

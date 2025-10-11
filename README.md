@@ -8,13 +8,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2024-orange)](https://hacktoberfest.com/)
 
-CareerForge is an AI-powered platform that helps professionals create outstanding resumes, optimize LinkedIn profiles, and generate compelling GitHub READMEs. Whether you're a job seeker, career changer, or looking to enhance your professional presence, CareerForge provides the tools you need to stand out.
+CareerForge is an AI-powered platform that helps professionals create outstanding resumes, optimize LinkedIn profiles, and generate compelling GitHub profile READMEs. Whether you're a job seeker, career changer, or looking to enhance your professional presence, CareerForge provides the tools you need to stand out.
 
 ## Features
 
 - **AI Resume Builder**: Create ATS-optimized resumes with intelligent content suggestions
 - **LinkedIn Profile Optimizer**: Generate compelling headlines, summaries, and job descriptions
-- **GitHub README Generator**: Build professional project documentation that showcases your work
+- **GitHub Profile README Generator**: Build professional profile README that showcases your work on your GitHub profile page
 - **Career Analytics**: Track your progress and get personalized recommendations
 - **Modern UI/UX**: Beautiful, responsive design with dark mode support
 - **Privacy First**: Your data stays secure and private
@@ -66,7 +66,7 @@ CareerForge/
 │   ├── app/                 # Next.js App Router pages
 │   │   ├── resume-builder/  # Resume builder page
 │   │   ├── linkedin/        # LinkedIn optimizer page
-│   │   ├── github-readme/   # GitHub README generator page
+│   │   ├── github-readme/   # GitHub profile README generator page
 │   │   └── layout.tsx       # Root layout with navbar/footer
 │   ├── components/          # Reusable React components
 │   │   ├── Navbar.tsx       # Navigation component

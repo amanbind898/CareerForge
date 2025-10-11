@@ -42,7 +42,7 @@ export default function Navbar() {
               href="/github-readme"
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
-              GitHub README
+              GitHub Profile README
             </Link>
             <Link
               href="/github"
@@ -101,7 +101,7 @@ export default function Navbar() {
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                GitHub README
+                GitHub Profile README
               </Link>
               <Link
                 href="/github"

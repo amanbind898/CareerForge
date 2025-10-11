@@ -4,10 +4,10 @@ export default function GitHubReadme() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            GitHub README Generator
+            GitHub Profile README Generator
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Create compelling README files that showcase your projects and skills effectively with AI-powered content generation.
+            Create compelling profile README files that showcase your projects and skills on your GitHub profile page with AI-powered content generation.
           </p>
         </div>
 
@@ -15,78 +15,78 @@ export default function GitHubReadme() {
           {/* Generator Form */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Project Information
+              Profile Information
             </h2>
             
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Project Name
+                  Your Name
                 </label>
                 <input
                   type="text"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                  placeholder="My Awesome Project"
+                  placeholder="John Doe"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Project Description
+                  About You
                 </label>
                 <textarea
                   rows={3}
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                  placeholder="Brief description of what your project does..."
+                  placeholder="Brief description about yourself and what you do..."
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Technologies Used
+                  Skills & Technologies
                 </label>
                 <input
                   type="text"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                  placeholder="React, Node.js, MongoDB, TypeScript..."
+                  placeholder="JavaScript, React, Node.js, Python, MongoDB..."
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Project Type
+                  Profile Type
                 </label>
                 <select className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                  <option value="">Select project type</option>
-                  <option value="web-app">Web Application</option>
-                  <option value="mobile-app">Mobile App</option>
-                  <option value="library">Library/Package</option>
-                  <option value="cli-tool">CLI Tool</option>
-                  <option value="api">API/Backend</option>
+                  <option value="">Select profile type</option>
+                  <option value="developer">Software Developer</option>
+                  <option value="designer">UI/UX Designer</option>
+                  <option value="data-scientist">Data Scientist</option>
+                  <option value="devops">DevOps Engineer</option>
+                  <option value="student">Student</option>
                   <option value="other">Other</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Features to Include
+                  Sections to Include
                 </label>
                 <div className="space-y-2">
                   {[
-                    'Installation Instructions',
-                    'Usage Examples',
-                    'API Documentation',
-                    'Contributing Guidelines',
-                    'License Information',
+                    'About Me',
+                    'Skills & Technologies',
+                    'GitHub Stats',
+                    'Recent Projects',
+                    'Contact Information',
                     'Badges/Shields',
-                    'Screenshots/Demo',
-                    'Roadmap'
+                    'Social Links',
+                    'Current Learning'
                   ].map((feature) => (
                     <label key={feature} className="flex items-center">
                       <input
                         type="checkbox"
                         className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                        defaultChecked={['Installation Instructions', 'Usage Examples', 'Contributing Guidelines'].includes(feature)}
+                        defaultChecked={['About Me', 'Skills & Technologies', 'GitHub Stats'].includes(feature)}
                       />
                       <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </label>
@@ -95,7 +95,7 @@ export default function GitHubReadme() {
               </div>
 
               <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                Generate README
+                Generate Profile README
               </button>
             </div>
           </div>
@@ -128,16 +128,16 @@ export default function GitHubReadme() {
             {/* README Sections */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Common README Sections
+                Common Profile README Sections
               </h2>
               <div className="space-y-3">
                 {[
-                  { section: 'Title & Description', icon: '📝' },
-                  { section: 'Installation', icon: '⚙️' },
-                  { section: 'Usage', icon: '🚀' },
-                  { section: 'Features', icon: '✨' },
-                  { section: 'Contributing', icon: '🤝' },
-                  { section: 'License', icon: '📄' }
+                  { section: 'Header & Introduction', icon: '👋' },
+                  { section: 'About Me', icon: '📝' },
+                  { section: 'Skills & Tech Stack', icon: '⚡' },
+                  { section: 'GitHub Statistics', icon: '📊' },
+                  { section: 'Projects Showcase', icon: '🚀' },
+                  { section: 'Contact & Social Links', icon: '📫' }
                 ].map((item) => (
                   <div key={item.section} className="flex items-center space-x-3">
                     <span className="text-lg">{item.icon}</span>
@@ -153,11 +153,11 @@ export default function GitHubReadme() {
                 💡 Pro Tips
               </h3>
               <ul className="space-y-2 text-sm text-blue-800 dark:text-blue-200">
-                <li>• Use clear, descriptive headings</li>
-                <li>• Include code examples and screenshots</li>
-                <li>• Add badges for build status, version, etc.</li>
-                <li>• Keep it concise but informative</li>
-                <li>• Update regularly as your project evolves</li>
+                <li>• Use a welcoming header with your name</li>
+                <li>• Include your current role and interests</li>
+                <li>• Add GitHub stats and language badges</li>
+                <li>• Showcase your best projects with links</li>
+                <li>• Keep it updated with your latest work</li>
               </ul>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function GitHubReadme() {
         <div className="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-              README Preview
+              Profile README Preview
             </h2>
             <div className="flex space-x-2">
               <button className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
@@ -183,7 +183,7 @@ export default function GitHubReadme() {
             <div className="text-gray-500 dark:text-gray-400">
               # Your Generated README will appear here...
               <br /><br />
-              Fill out the form above and click {"Generate README"} to see your custom README file.
+              Fill out the form above and click {"Generate Profile README"} to see your custom profile README file.
             </div>
           </div>
         </div>

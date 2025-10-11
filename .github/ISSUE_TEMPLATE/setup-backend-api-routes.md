@@ -64,7 +64,7 @@ Create a comprehensive backend system for CareerForge with RESTful API routes, M
   }
   ```
 
-- [ ] **GitHub README Model** (`models/GitHubReadme.ts`)
+- [ ] **GitHub Profile README Model** (`models/GitHubProfileReadme.ts`)
   ```typescript
   interface GitHubReadme {
     id: string;
@@ -95,10 +95,10 @@ Create a comprehensive backend system for CareerForge with RESTful API routes, M
   - `POST /api/linkedin/summary/generate` - Generate summary
   - `POST /api/linkedin/experience/optimize` - Optimize experience descriptions
 
-#### **GitHub README API Routes**
-- [ ] **`/api/github`**
-  - `GET /api/github/readme` - List user's READMEs
-  - `POST /api/github/readme` - Create new README
+#### **GitHub Profile README API Routes**
+- [ ] **`/api/github-profile`**
+  - `GET /api/github-profile/readme` - List user's profile READMEs
+  - `POST /api/github-profile/readme` - Create new profile README
   - `GET /api/github/readme/[id]` - Get specific README
   - `PUT /api/github/readme/[id]` - Update README
   - `POST /api/github/readme/generate` - Generate README content

@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
   name: "CareerForge",
-  description: "Build. Polish. Launch your career with AI-powered tools for resumes, LinkedIn profiles, and GitHub READMEs.",
+  description: "Build. Polish. Launch your career with AI-powered tools for resumes, LinkedIn profiles, and GitHub profile READMEs.",
   url: "https://careerforge.dev",
-  github: "https://github.com/yourusername/CareerForge",
+  github: "https://github.com/amanbind898/CareerForge",
   author: {
     name: "CareerForge Team",
-    url: "https://github.com/yourusername/CareerForge",
+    url: "https://github.com/amanbind898/CareerForge",
   },
 };
 
@@ -23,7 +23,7 @@ export const NAVIGATION_ITEMS = [
     href: "/linkedin",
   },
   {
-    title: "GitHub README",
+    title: "GitHub Profile README",
     href: "/github-readme",
   },
 ];
@@ -40,8 +40,8 @@ export const FEATURES = [
     icon: "💼",
   },
   {
-    title: "GitHub README Generator",
-    description: "Generate compelling GitHub README files that showcase your projects and skills effectively.",
+    title: "GitHub Profile README Generator",
+    description: "Generate compelling GitHub profile README files that showcase your projects and skills on your profile page.",
     icon: "📚",
   },
   {

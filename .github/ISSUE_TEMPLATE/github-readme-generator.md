@@ -1,13 +1,13 @@
 ---
-name: "💻 Implement GitHub README Generator"
+name: "💻 Implement GitHub Profile README Generator"
 about: "Provide a customizable GitHub profile README builder."
-title: "💻 Implement GitHub README Generator"
+title: "💻 Implement GitHub Profile README Generator"
 labels: ["feature", "frontend", "markdown"]
 assignees: ""
 ---
 
 ### Goal
-Generate a customized GitHub profile README from user inputs.
+Generate a customized GitHub profile README from user inputs (the special README that appears on your GitHub profile page).
 
 ### Tasks
 - [ ] Create form for inputs (name, skills, projects, social links)
@@ -16,4 +16,4 @@ Generate a customized GitHub profile README from user inputs.
 - [ ] Add theme selector (Minimal, Gradient, Developer)
 
 ### Expected Output
-A functional README generator with live preview and download.
+A functional profile README generator with live preview and download.

@@ -67,10 +67,10 @@ Create a sophisticated AI text generation system for CareerForge that provides i
   - `POST /api/ai/linkedin/posts` - Content suggestions
   - `POST /api/ai/linkedin/recommendations` - Recommendation text
 
-- [ ] **GitHub README APIs**
-  - `POST /api/ai/github/readme` - Complete README generation
-  - `POST /api/ai/github/description` - Project descriptions
-  - `POST /api/ai/github/installation` - Setup instructions
+- [ ] **GitHub Profile README APIs**
+  - `POST /api/ai/github/profile-readme` - Complete profile README generation
+  - `POST /api/ai/github/profile-description` - Profile descriptions
+  - `POST /api/ai/github/profile-sections` - Profile section content
   - `POST /api/ai/github/features` - Feature documentation
   - `POST /api/ai/github/contributing` - Contribution guidelines
 

@@ -29,7 +29,7 @@ Create a high-converting, modern landing page for CareerForge that effectively c
 - [ ] **Feature Grid Section**
   ```
   📄 AI Resume Builder    💼 LinkedIn Optimizer
-  📚 GitHub README Gen    📊 Career Analytics
+  📚 GitHub Profile README Gen    📊 Career Analytics
   ```
   - Icon + title + description for each feature
   - Hover effects and micro-interactions
@@ -47,7 +47,7 @@ Create a high-converting, modern landing page for CareerForge that effectively c
   - Animated counters for key metrics:
     - "10,000+ Resumes Generated"
     - "5,000+ LinkedIn Profiles Optimized"
-    - "15,000+ GitHub READMEs Created"
+    - "15,000+ GitHub Profile READMEs Created"
     - "95% Success Rate"
 
 - [ ] **Testimonials/Reviews**

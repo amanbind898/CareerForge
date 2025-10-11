@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CareerForge - Build. Polish. Launch your career.",
-  description: "AI-powered tools for resumes, LinkedIn profiles, and GitHub READMEs to help you build, polish, and launch your career.",
+  description: "AI-powered tools for resumes, LinkedIn profiles, and GitHub profile READMEs to help you build, polish, and launch your career.",
 };
 
 export default function RootLayout({
