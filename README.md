@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2024-orange)](https://hacktoberfest.com/)
+[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-orange)](https://hacktoberfest.com/)
 
 CareerForge is an AI-powered platform that helps professionals create outstanding resumes, optimize LinkedIn profiles, and generate compelling GitHub profile READMEs. Whether you're a job seeker, career changer, or looking to enhance your professional presence, CareerForge provides the tools you need to stand out.
 
