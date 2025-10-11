@@ -39,7 +39,7 @@ CareerForge is an AI-powered platform that helps professionals create outstandin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/CareerForge.git
+   git clone https://github.com/amanbind898/CareerForge.git
    cd CareerForge
    ```
 2. **Install dependencies**
