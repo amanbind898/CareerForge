@@ -128,7 +128,7 @@ export default function ResumeBuilder() {
                 ].map((tab) => (
                   <button
                     key={tab.key}
-                    onClick={() => setActiveTab(tab.key as any)}
+                    onClick={() => setActiveTab(tab.key as 'personal' | 'education' | 'skills' | 'projects' | 'certifications' | 'achievements')}
                     className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors ${
                       activeTab === tab.key
                         ? 'border-b-2 border-blue-500 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
@@ -158,9 +158,9 @@ export default function ResumeBuilder() {
                 <li>• Fill in all sections for a complete resume</li>
                 <li>• Preview updates in real-time on the right</li>
                 <li>• <strong>Auto-saves</strong> your work as you type - no data loss!</li>
-                <li>• Click "Download PDF" for instant PDF export</li>
-                <li>• Click "LaTeX" to edit in Overleaf for best quality</li>
-                <li>• Use "Clear" button to start fresh</li>
+                <li>• Click &quot;Download PDF&quot; for instant PDF export</li>
+                <li>• Click &quot;LaTeX&quot; to edit in Overleaf for best quality</li>
+                <li>• Use &quot;Clear&quot; button to start fresh</li>
                 <li>• This template is ATS-friendly and tested</li>
               </ul>
             </div>

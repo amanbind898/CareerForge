@@ -97,7 +97,7 @@ export default function AchievementsForm({ data, setData }: Props) {
 
       {data.achievements.length === 0 && (
         <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No achievements yet. Click "Add Achievement" to get started.
+          Click &quot;Add Achievement&quot; to add your first achievement.
         </div>
       )}
     </div>

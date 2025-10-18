@@ -55,15 +55,6 @@ export function generatePDF(data: ResumeData): jsPDF {
     return false;
   };
 
-  // Helper function to add wrapped text without duplication
-  const addWrappedText = (text: string, x: number, maxWidth: number, lineHeight: number = 4) => {
-    const lines = doc.splitTextToSize(text, maxWidth);
-    lines.forEach((line: string) => {
-      checkPageBreak(lineHeight);
-      doc.text(line, x, yPos);
-      yPos += lineHeight;
-    });
-  };
 
   // ========== HEADER ==========
   if (data.personalInfo.name) {

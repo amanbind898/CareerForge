@@ -146,7 +146,7 @@ export default function EducationForm({ data, setData }: Props) {
 
       {data.education.length === 0 && (
         <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No education entries yet. Click "Add Education" to get started.
+          No education entries yet. Click &quot;Add Education&quot; to get started.
         </div>
       )}
     </div>

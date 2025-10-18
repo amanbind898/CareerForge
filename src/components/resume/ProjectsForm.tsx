@@ -173,7 +173,7 @@ export default function ProjectsForm({ data, setData }: Props) {
 
       {data.projects.length === 0 && (
         <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No projects yet. Click "Add Project" to get started.
+          No projects yet. Click &quot;Add Project&quot; to get started.
         </div>
       )}
     </div>

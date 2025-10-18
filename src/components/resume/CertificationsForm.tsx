@@ -76,7 +76,7 @@ export default function CertificationsForm({ data, setData }: Props) {
                 value={cert.link}
                 onChange={(e) => updateCertification(cert.id, 'link', e.target.value)}
                 className={inputClass}
-                placeholder="https://www.kaggle.com/learn/certification/..."
+                placeholder="Click &quot;Add Certification&quot; to add your first certification"
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function CertificationsForm({ data, setData }: Props) {
 
       {data.certifications.length === 0 && (
         <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-          No certifications yet. Click "Add Certification" to get started.
+          No certifications yet. Click &quot;Add Certification&quot; to get started.
         </div>
       )}
     </div>
