@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { FEATURES } from "@/lib/constants";
+import BackgroundRipple from "@/components/BackgroundRipple";
 
 export default function Home() {
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-20 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <BackgroundRipple />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
               Build. Polish. Launch your career.
