@@ -1,0 +1,349 @@
+{
+  "document_info": {
+    "title": "20 Coding Patterns",
+    "publisher": "BOSSCODER ACADEMY",
+    "website": "www.bosscoderacademy.com",
+    "codes": ["A2406140", "B0012446"],
+    "tagline": "CRACK ANY CODING INTERVIEW"
+  },
+  "disclaimer": "Learning all 20 Coding Patterns in DSA can be a challenging journey. Go at your own pace, take breaks when needed, and remember, it's not about how fast you finish, but how well you understand. Use this doc as your guide, and build a solid foundation in DSA.",
+  
+  "patterns": [
+    {
+      "id": 1,
+      "name": "SLIDING WINDOW",
+      "usage": "This algorithmic technique is used when we need to handle the input data in a specific window size.",
+      "data_structures": ["Array", "String", "HashTable"],
+      "sample_problems": [
+        "Longest Substring with 'K' Distinct Characters",
+        "Fruits into Baskets"
+      ],
+      "visual_example": {
+        "description": "Sliding window technique shown with array [1, 3, 2, 6, -1, 4, 1, 8, 2]",
+        "action": "Slide one element forward to move the window"
+      }
+    },
+    {
+      "id": 2,
+      "name": "ISLANDS (MATRIX TRAVERSAL)",
+      "usage": "This pattern describes all the efficient ways of traversing a matrix (or 2D array).",
+      "data_structures": ["Matrix", "Queue"],
+      "sample_problems": [
+        "Number of Islands",
+        "Flood Fill",
+        "Cycle in a Matrix"
+      ],
+      "visual_example": {
+        "description": "Matrix with 1s and 0s representing islands and water",
+        "matrix_example": "Binary matrix showing island formations"
+      }
+    },
+    {
+      "id": 3,
+      "name": "TWO POINTERS",
+      "usage": "This technique uses two pointers to iterate input data. Generally, both pointers move in the opposite direction at a constant interval.",
+      "data_structures": ["Array", "String", "LinkedList"],
+      "sample_problems": [
+        "Squaring a Sorted Array",
+        "Dutch National Flag Problem",
+        "Minimum Window Sort"
+      ],
+      "visual_example": {
+        "description": "Two pointers (Pointer1 and Pointer2) moving through array",
+        "array_example": "[1, 2, 3, 4, 6]"
+      }
+    },
+    {
+      "id": 4,
+      "name": "FAST & SLOW POINTERS",
+      "usage": "Also known as Hare & Tortoise algorithm. This technique uses two pointers that traverse the input data at different speeds.",
+      "data_structures": ["Array", "String", "LinkedList"],
+      "sample_problems": [
+        "Middle of the LinkedList",
+        "Happy Number",
+        "Cycle in a Circular Array"
+      ],
+      "visual_example": {
+        "description": "LinkedList cycle detection with fast and slow pointers",
+        "cycle_example": "Nodes 1→2→3→4→5→6 with cycle back to node 3"
+      }
+    },
+    {
+      "id": 5,
+      "name": "MERGE INTERVALS",
+      "usage": "This technique is used to deal with overlapping intervals.",
+      "data_structures": ["Array", "Heap"],
+      "sample_problems": [
+        "Conflicting Appointments",
+        "Minimum Meeting Rooms"
+      ],
+      "visual_example": {
+        "description": "Different interval overlap scenarios",
+        "cases": [
+          "a and b do not overlap",
+          "a and b overlap, b ends after a",
+          "a completely overlaps b",
+          "a and b overlap, a ends after b",
+          "b completely overlaps a"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "CYCLIC SORT",
+      "usage": "Use this technique to solve array problems where the input data lies within a fixed range.",
+      "data_structures": ["Array"],
+      "sample_problems": [
+        "Find all Missing Numbers",
+        "Find all Duplicate Numbers",
+        "Find the First K Missing Positive Numbers"
+      ],
+      "visual_example": {
+        "description": "Array sorting using cyclic sort technique",
+        "array_example": "[0, 4, 2, 6, 3, 5]"
+      }
+    },
+    {
+      "id": 7,
+      "name": "IN-PLACE REVERSAL OF A LINKEDLIST",
+      "usage": "This technique describes an efficient way to reverse the links between a set of nodes of a LinkedList. Often, the constraint is that we need to do this in-place, i.e., using the existing node objects and without using extra memory.",
+      "data_structures": ["LinkedList"],
+      "sample_problems": [
+        "Reverse every K-element Sub-list",
+        "Rotate a LinkedList"
+      ],
+      "visual_example": {
+        "description": "LinkedList reversal demonstration",
+        "original": "2→4→6→8→null",
+        "reversed": "null←2←4←6←8"
+      }
+    },
+    {
+      "id": 8,
+      "name": "BREADTH-FIRST SEARCH",
+      "usage": "This technique is used to solve problems involving traversing trees or graphs in a breadth-first search manner.",
+      "data_structures": ["Tree", "Graph", "Matrix", "Queue"],
+      "sample_problems": [
+        "Binary Tree Level Order Traversal",
+        "Minimum Depth of a Binary Tree",
+        "Connect Level Order Siblings"
+      ],
+      "visual_example": {
+        "description": "BFS traversal with queue and visited nodes",
+        "traversal_order": "0, 1, 2, 5, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13"
+      }
+    },
+    {
+      "id": 9,
+      "name": "DEPTH FIRST SEARCH",
+      "usage": "This technique is used to solve problems involving traversing trees or graphs in a depth-first search manner.",
+      "data_structures": ["Tree", "Graph", "Matrix"],
+      "sample_problems": [
+        "Path With Given Sequence",
+        "Count Paths for a Sum"
+      ],
+      "visual_example": {
+        "description": "DFS traversal from source node",
+        "output": "0, 1, 2, 3, 4, 5, 6, 7"
+      }
+    },
+    {
+      "id": 10,
+      "name": "TWO HEAPS",
+      "usage": "In many problems, we are given a set of elements that can be divided into two parts. We are interested in knowing the smallest element in one part and the biggest element in the other part. As the name suggests, this technique uses a Min-Heap to find the smallest element and a Max-Heap to find the biggest element.",
+      "data_structures": ["Heap", "Array"],
+      "sample_problems": [
+        "Find the Median of a Number Stream",
+        "Next Interval"
+      ],
+      "visual_example": {
+        "description": "Two heaps for finding median",
+        "max_heap": "[3, 1, 2]",
+        "min_heap": "[4, 5, 6]",
+        "median_calculation": "For even count: (3 + 4) / 2 = 3.5"
+      }
+    },
+    {
+      "id": 11,
+      "name": "SUBSETS",
+      "usage": "Use this technique when the problem asks to deal with permutations or combinations of a set of elements.",
+      "data_structures": ["Queue", "Array", "String"],
+      "sample_problems": [
+        "String Permutations by changing case",
+        "Unique Generalized Abbreviations"
+      ],
+      "visual_example": {
+        "description": "Subset generation tree",
+        "example": "For {1,2,3}: Include/Exclude decisions create subsets",
+        "subsets": "[], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]"
+      }
+    },
+    {
+      "id": 12,
+      "name": "MODIFIED BINARY SEARCH",
+      "usage": "Use this technique to search a sorted set of elements efficiently.",
+      "data_structures": ["Array"],
+      "sample_problems": [
+        "Ceiling of a Number",
+        "Bitonic Array Maximum"
+      ],
+      "visual_example": {
+        "description": "Binary search process for finding value 45",
+        "array": "[1, 4, 5, 8, 11, 15, 21, 45, 70, 100]",
+        "result": "Value 45 found at index 7"
+      }
+    },
+    {
+      "id": 13,
+      "name": "BITWISE XOR",
+      "usage": "This technique uses the XOR operator to manipulate bits to solve problems.",
+      "data_structures": ["Array", "Bits"],
+      "sample_problems": [
+        "Two Single Numbers",
+        "Flip and Invert an Image"
+      ],
+      "visual_example": {
+        "description": "XOR of two binary strings",
+        "example": "1010 XOR 1101 = 0111",
+        "rule": "Character matches: 0, Character mismatches: 1"
+      }
+    },
+    {
+      "id": 14,
+      "name": "TOP K ELEMENTS",
+      "usage": "This technique is used to find top/smallest/frequently occurring K elements in a set.",
+      "data_structures": ["Array", "Heap", "Queue"],
+      "sample_problems": [
+        "K Closest Points to the Origin",
+        "Maximum Distinct Elements"
+      ],
+      "visual_example": {
+        "description": "Finding top K frequent elements",
+        "steps": [
+          "1. Build hashmap: element → frequency",
+          "2. Build heap of k most frequent elements",
+          "3. Build output array"
+        ],
+        "example": "K=3, elements=[1,1,1,2,2,3,3,3,4] → result=[2,5,1]"
+      }
+    },
+    {
+      "id": 15,
+      "name": "K-WAY MERGE",
+      "usage": "This technique helps us solve problems that involve a list of sorted arrays.",
+      "data_structures": ["Array", "Queue", "Heap"],
+      "sample_problems": [
+        "Kth Smallest Number in M Sorted Lists",
+        "Kth Smallest Number in a Sorted Matrix"
+      ],
+      "visual_example": {
+        "description": "Merging multiple sorted arrays",
+        "arrays": [
+          "[2, 5, 8]",
+          "[3, 6, 9]",
+          "[1, 4, 7]"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "name": "TOPOLOGICAL SORT",
+      "usage": "Use this technique to find a linear ordering of elements that have dependencies on each other.",
+      "data_structures": ["Array", "HashTable", "Queue", "Graph"],
+      "sample_problems": [
+        "Tasks Scheduling",
+        "Alien Dictionary"
+      ],
+      "visual_example": {
+        "description": "Directed graph with topological ordering",
+        "nodes": "0, 1, 2, 3, 4, 5, 6, 7"
+      }
+    },
+    {
+      "id": 17,
+      "name": "0/1 KNAPSACK",
+      "usage": "This technique is used to solve optimization problems. Use this technique to select elements that give maximum profit from a given set with a limitation on capacity and that each element can only be picked once.",
+      "data_structures": ["Array", "HashTable"],
+      "sample_problems": [
+        "Equal Subset Sum Partition",
+        "Minimum Subset Sum Difference"
+      ],
+      "visual_example": {
+        "description": "Dynamic programming table for knapsack problem",
+        "table_structure": "Items vs Weights with profit calculations"
+      }
+    },
+    {
+      "id": 18,
+      "name": "FIBONACCI NUMBERS",
+      "usage": "Use this technique to solve problems that follow the Fibonacci numbers sequence, i.e., every subsequent number is calculated from the last few numbers.",
+      "data_structures": ["Array", "Hash Table"],
+      "sample_problems": [
+        "Staircase",
+        "House Thief"
+      ],
+      "visual_example": {
+        "description": "House thief problem with dynamic programming",
+        "example": "Houses: [2, 4, 5, 12, 7] → Maximum theft without adjacent houses"
+      }
+    },
+    {
+      "id": 19,
+      "name": "PALINDROMIC SUBSEQUENCE",
+      "usage": "This technique is used to solve optimization problems related to palindromic sequences or strings.",
+      "data_structures": ["Array", "HashTable"],
+      "sample_problems": [
+        "Longest Palindromic Subsequence",
+        "Minimum Deletions in a String to make it a Palindrome"
+      ],
+      "visual_example": {
+        "description": "Palindromic subsequences for string 'ABAB'",
+        "examples": [
+          "Size 2: AA, BB",
+          "Size 3: ABA, AAA, BBB, BAB",
+          "Size 4: ABBA",
+          "Size 5: ABBBA"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "name": "LONGEST COMMON SUBSTRING",
+      "usage": "Use this technique to find the optimal part of a string/sequence or set of strings/sequences.",
+      "data_structures": ["Array", "HashTable"],
+      "sample_problems": [
+        "Maximum Sum Increasing Subsequence",
+        "Edit Distance"
+      ],
+      "visual_example": {
+        "description": "LCS dynamic programming table",
+        "strings": "String A: ABCXYZAY, String B: XYZBC",
+        "table": "DP table showing longest common substring calculation"
+      }
+    }
+  ],
+  
+  "company_info": {
+    "why_bosscoder": {
+      "stats": [
+        "2200+ Alumni placed at Top Product-based companies",
+        "More than 120% hike for every 2 out of 3 Working Professionals",
+        "Average Package of 24 LPA"
+      ],
+      "curriculum_quality": "The syllabus is most up-to-date and the list of problems provided covers all important topics."
+    },
+    "testimonials": [
+      {
+        "name": "Lavanya",
+        "company": "Meta",
+        "quote": "Course is very well structured and streamlined to crack any MAANG company."
+      },
+      {
+        "name": "Rahul",
+        "company": "Google",
+        "quote": "The syllabus is most up-to-date and the list of problems provided covers all important topics."
+      }
+    ],
+    "call_to_action": "EXPLORE MORE"
+  }
+}

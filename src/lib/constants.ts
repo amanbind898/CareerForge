@@ -26,6 +26,14 @@ export const NAVIGATION_ITEMS = [
     title: "GitHub Profile README",
     href: "/github-readme",
   },
+  {
+    title: "Complete DSA",
+    href: "/dsa-complete",
+  },
+  {
+    title: "20 DSA Patterns",
+    href: "/dsa-patterns",
+  },
 ];
 
 export const FEATURES = [
@@ -45,8 +53,13 @@ export const FEATURES = [
     icon: "📚",
   },
   {
-    title: "Career Analytics",
-    description: "Get insights into your career progress and recommendations for improvement.",
-    icon: "📊",
+    title: "Complete DSA Learning",
+    description: "Master Data Structures and Algorithms with comprehensive topic-wise learning, study plans, and 200+ practice problems.",
+    icon: "🧠",
+  },
+  {
+    title: "20 DSA Coding Patterns",
+    description: "Learn 20 essential coding patterns that cover 90% of interview questions with 150+ sample problems.",
+    icon: "🎯",
   },
 ];

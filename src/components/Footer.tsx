@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -57,6 +57,22 @@ export default function Footer() {
                   className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   GitHub Profile README
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dsa-complete"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  Complete DSA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dsa-patterns"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  20 DSA Patterns
                 </Link>
               </li>
             </ul>

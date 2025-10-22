@@ -1,4 +1,106 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import LinkedInProfilePreview from '@/components/LinkedInProfilePreview';
+
+type GeneratorType = 'headline' | 'summary' | 'experience';
+
+interface FormData {
+  headline: { role: string; skills: string };
+  summary: { background: string; tone: string };
+  experience: { jobTitle: string; description: string };
+}
+
 export default function LinkedIn() {
+  const [formData, setFormData] = useState<FormData>({
+    headline: { role: '', skills: '' },
+    summary: { background: '', tone: '' },
+    experience: { jobTitle: '', description: '' },
+  });
+
+  const [results, setResults] = useState<Record<GeneratorType, string>>({
+    headline: '',
+    summary: '',
+    experience: '',
+  });
+
+  const [loading, setLoading] = useState<Record<GeneratorType, boolean>>({
+    headline: false,
+    summary: false,
+    experience: false,
+  });
+
+  const [errors, setErrors] = useState<Record<GeneratorType, string>>({
+    headline: '',
+    summary: '',
+    experience: '',
+  });
+
+  const handleGenerate = async (type: GeneratorType) => {
+    setLoading((prev) => ({ ...prev, [type]: true }));
+    setErrors((prev) => ({ ...prev, [type]: '' }));
+    setResults((prev) => ({ ...prev, [type]: '' }));
+
+    try {
+      const response = await fetch('/api/linkedin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, data: formData[type] }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to generate content');
+      }
+
+      setResults((prev) => ({ ...prev, [type]: data.content }));
+    } catch (error) {
+      setErrors((prev) => ({
+        ...prev,
+        [type]: error instanceof Error ? error.message : 'An error occurred',
+      }));
+    } finally {
+      setLoading((prev) => ({ ...prev, [type]: false }));
+    }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };
+
+  const insertIntoPreview = (type: GeneratorType, content: string) => {
+    // Get current profile data from localStorage
+    const saved = localStorage.getItem('linkedinProfilePreview');
+    let profileData = saved ? JSON.parse(saved) : { name: '', headline: '', about: '', experience: [] };
+
+    // Update the appropriate field
+    if (type === 'headline') {
+      profileData.headline = content;
+    } else if (type === 'summary') {
+      profileData.about = content;
+    } else if (type === 'experience') {
+      // Add as new experience or update the last one
+      if (profileData.experience.length === 0) {
+        profileData.experience.push({
+          id: Date.now().toString(),
+          title: formData.experience.jobTitle || 'Job Title',
+          company: 'Company Name',
+          description: content,
+        });
+      } else {
+        // Update the last experience entry
+        profileData.experience[profileData.experience.length - 1].description = content;
+      }
+    }
+
+    // Save back to localStorage
+    localStorage.setItem('linkedinProfilePreview', JSON.stringify(profileData));
+    
+    // Trigger a storage event to update the preview component
+    window.dispatchEvent(new Event('storage'));
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,16 +133,61 @@ export default function LinkedIn() {
               <input
                 type="text"
                 placeholder="Your current role"
+                value={formData.headline.role}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    headline: { ...prev.headline, role: e.target.value },
+                  }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
               />
               <input
                 type="text"
                 placeholder="Key skills (comma separated)"
+                value={formData.headline.skills}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    headline: { ...prev.headline, skills: e.target.value },
+                  }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
               />
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
-                Generate Headlines
+              <button
+                onClick={() => handleGenerate('headline')}
+                disabled={loading.headline || !formData.headline.role || !formData.headline.skills}
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                {loading.headline ? 'Generating...' : 'Generate Headlines'}
               </button>
+              {errors.headline && (
+                <p className="text-red-500 text-sm">{errors.headline}</p>
+              )}
+              {results.headline && (
+                <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-md">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Generated Headlines:</h3>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => insertIntoPreview('headline', results.headline)}
+                        className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+                      >
+                        Insert →
+                      </button>
+                      <button
+                        onClick={() => copyToClipboard(results.headline)}
+                        className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap text-sm">
+                    {results.headline}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -63,17 +210,64 @@ export default function LinkedIn() {
               <textarea
                 placeholder="Brief description of your background"
                 rows={3}
+                value={formData.summary.background}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    summary: { ...prev.summary, background: e.target.value },
+                  }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
               />
-              <select className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+              <select
+                value={formData.summary.tone}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    summary: { ...prev.summary, tone: e.target.value },
+                  }))
+                }
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              >
                 <option value="">Select tone</option>
                 <option value="professional">Professional</option>
                 <option value="conversational">Conversational</option>
                 <option value="confident">Confident</option>
               </select>
-              <button className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
-                Generate Summary
+              <button
+                onClick={() => handleGenerate('summary')}
+                disabled={loading.summary || !formData.summary.background || !formData.summary.tone}
+                className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                {loading.summary ? 'Generating...' : 'Generate Summary'}
               </button>
+              {errors.summary && (
+                <p className="text-red-500 text-sm">{errors.summary}</p>
+              )}
+              {results.summary && (
+                <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-md">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Generated Summary:</h3>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => insertIntoPreview('summary', results.summary)}
+                        className="text-green-600 dark:text-green-400 hover:underline text-sm"
+                      >
+                        Insert →
+                      </button>
+                      <button
+                        onClick={() => copyToClipboard(results.summary)}
+                        className="text-green-600 dark:text-green-400 hover:underline text-sm"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap text-sm">
+                    {results.summary}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -96,18 +290,74 @@ export default function LinkedIn() {
               <input
                 type="text"
                 placeholder="Job title"
+                value={formData.experience.jobTitle}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    experience: { ...prev.experience, jobTitle: e.target.value },
+                  }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
               />
               <textarea
                 placeholder="What did you do in this role?"
                 rows={3}
+                value={formData.experience.description}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    experience: { ...prev.experience, description: e.target.value },
+                  }))
+                }
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
               />
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
-                Optimize Description
+              <button
+                onClick={() => handleGenerate('experience')}
+                disabled={loading.experience || !formData.experience.jobTitle || !formData.experience.description}
+                className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                {loading.experience ? 'Optimizing...' : 'Optimize Description'}
               </button>
+              {errors.experience && (
+                <p className="text-red-500 text-sm">{errors.experience}</p>
+              )}
+              {results.experience && (
+                <div className="mt-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-md">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Optimized Description:</h3>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => insertIntoPreview('experience', results.experience)}
+                        className="text-purple-600 dark:text-purple-400 hover:underline text-sm"
+                      >
+                        Insert →
+                      </button>
+                      <button
+                        onClick={() => copyToClipboard(results.experience)}
+                        className="text-purple-600 dark:text-purple-400 hover:underline text-sm"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap text-sm">
+                    {results.experience}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
+        </div>
+
+        {/* LinkedIn Profile Preview */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
+            Profile Preview
+          </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-6">
+            See how your generated content will look on LinkedIn. Click "Insert →" buttons above to add content here.
+          </p>
+          <LinkedInProfilePreview />
         </div>
 
         {/* Tips Section */}

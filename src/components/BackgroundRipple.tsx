@@ -28,9 +28,9 @@ export default function BackgroundRipple({
   const [pulseDots, setPulseDots] = useState<ParticleStyle[]>([]);
 
   useEffect(() => {
-    const newRipples = Array.from({ length: rippleCount }, (_, i) => ({
+    const newRipples = Array.from({ length: rippleCount - 1 }, (_, i) => ({
       id: i,
-      delay: i * 0.8, // Stagger the animations
+      delay: (i + 1) * 0.8, // Stagger the animations, start from 0.8s
     }));
     setRipples(newRipples);
 
@@ -97,54 +97,14 @@ export default function BackgroundRipple({
           className="absolute top-1/2 left-1/2 w-32 h-32 rounded-full border-2 border-blue-400/20 dark:border-blue-300/15 bg-gradient-to-r from-blue-50/5 to-indigo-50/5 dark:from-blue-400/5 dark:to-indigo-400/5 animate-ripple"
           style={{
             animationDelay: `${ripple.delay}s`,
+            transform: 'translate(-50%, -50%)',
           }}
         />
       ))}
       
-      {/* Additional floating particles */}
-      <div className="absolute inset-0">
-        {particles.map((particle, i) => (
-          <div
-            key={`particle-${i}`}
-            className="absolute w-1.5 h-1.5 bg-blue-400/30 dark:bg-blue-300/20 rounded-full animate-float"
-            style={particle}
-          />
-        ))}
-      </div>
+    
       
-      {/* Small moving dots */}
-      <div className="absolute inset-0">
-        {smallDots.map((dot, i) => (
-          <div
-            key={`small-dot-${i}`}
-            className="absolute w-1 h-1 bg-blue-500/25 dark:bg-blue-400/15 rounded-full animate-float"
-            style={dot}
-          />
-        ))}
-      </div>
-      
-      {/* Tiny dots with fast motion */}
-      <div className="absolute inset-0">
-        {tinyDots.map((dot, i) => (
-          <div
-            key={`tiny-dot-${i}`}
-            className="absolute w-0.5 h-0.5 bg-blue-600/20 dark:bg-blue-300/10 rounded-full animate-float"
-            style={dot}
-          />
-        ))}
-      </div>
-      
-      {/* Larger accent circles */}
-      <div className="absolute inset-0">
-        {accentCircles.map((circle, i) => (
-          <div
-            key={`accent-${i}`}
-            className="absolute w-2 h-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 dark:from-blue-400/15 dark:to-indigo-400/15 rounded-full animate-float"
-            style={circle}
-          />
-        ))}
-      </div>
-      
+    
       {/* Drifting dots */}
       <div className="absolute inset-0">
         {driftDots.map((dot, i) => (
@@ -156,16 +116,7 @@ export default function BackgroundRipple({
         ))}
       </div>
       
-      {/* Pulsing moving dots */}
-      <div className="absolute inset-0">
-        {pulseDots.map((dot, i) => (
-          <div
-            key={`pulse-dot-${i}`}
-            className="absolute w-0.5 h-0.5 bg-purple-400/25 dark:bg-purple-300/15 rounded-full animate-pulse-move"
-            style={dot}
-          />
-        ))}
-      </div>
+    
     </div>
   );
 }

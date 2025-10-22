@@ -25,7 +25,7 @@ export default function Home() {
                 Get Started
               </Link>
               <Link
-                href="https://github.com/yourusername/CareerForge"
+                href="https://github.com/amanbind898/CareerForge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

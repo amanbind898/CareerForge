@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Navbar() {
+export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,6 +43,18 @@ export default function Navbar() {
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               GitHub Profile README
+            </Link>
+            <Link
+              href="/dsa-complete"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Complete DSA
+            </Link>
+            <Link
+              href="/dsa-patterns"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              20 DSA Patterns
             </Link>
             <Link
               href="/github"
@@ -102,6 +114,20 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 GitHub Profile README
+              </Link>
+              <Link
+                href="/dsa-complete"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Complete DSA
+              </Link>
+              <Link
+                href="/dsa-patterns"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                20 DSA Patterns
               </Link>
               <Link
                 href="/github"
